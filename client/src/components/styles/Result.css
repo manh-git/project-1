@@ -1,0 +1,60 @@
+
+.result-body{
+    overflow: auto;
+    
+}
+.container-1{
+    min-height: 100%;
+    width: 100%;
+    
+    
+}
+.ketquaht{
+    
+    border: 2px solid whitesmoke;
+    border-radius: 8px;
+    color: black;
+    max-width: fit-content;
+    background-color: antiquewhite;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+.table2{
+    border-collapse: collapse;
+    width:100%;
+    margin: 20px 0;
+}
+.table2 th, .table2 td{
+    border: 1px solid black;
+    padding: 5px 10px;
+    text-align: left;
+    background-color: antiquewhite;
+}
+.table2 thead th{
+    background-color:bisque;
+    
+
+}
+.table2 tbody tr:nth-child(even){
+    background-color: rgb(221, 10, 10);
+}
+
+.btn-detail{
+    margin: 5px;
+}
+.history-table{
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+}
+.history-table th, .history-table td{
+    border: 1px solid black;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: antiquewhite;
+}
+.history-table thead th{
+    background-color: bisque;
+}

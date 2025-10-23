@@ -1,0 +1,110 @@
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 0px 0px;
+    background-color: rgb(161, 189, 163);
+    height: 100vh;
+    font-family: 'Time-new-roman', sans-serif;
+    box-sizing: border-box;
+    gap: 10px;
+    
+    
+}
+.container form{
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.main-container{
+    flex:1.2;
+    max-width: 900px;
+    padding-left: 0px;
+    margin-top: -100px;
+
+}
+.title {
+    font-size: 5.0rem;
+    color:#1b5854;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    
+}
+.subtitle{
+    font-size: 2.0rem;
+    margin-bottom: 10px;
+     margin-top: 15px;
+}
+.text-light{
+    color: #1f0c39;
+}
+.start-learning {
+    background-color: #9cef83;
+    color: rgb(18, 16, 16);
+    border: 1px black;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: 0.5s;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height:40px;
+    padding: 10px 10px;
+    
+
+
+}
+.start-learning:hover{
+    background-color: rgba(227, 161, 80, 0.743);
+}
+
+#form input{
+   
+    
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0rem;
+}
+.image-main{
+    flex:1;
+    display:  flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 80%;
+    margin-bottom: 50px;
+    margin-left: 350px;
+}
+.image-main img {
+  
+  max-width: 100%;
+  max-height: 80vh;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.hear-menu{
+    font-size: 1.8rem;
+}
+.Menu-C{
+    border: 2px solid whitesmoke;
+    border-radius: 8px;
+    background-color: antiquewhite;
+    color: brown;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    width: 50px;
+    height: 10px;
+
+}
