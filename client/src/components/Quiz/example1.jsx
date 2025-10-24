@@ -61,7 +61,6 @@ const QUIZ_DATA = [
         answer: "Crisis (n)"
     },
 
-
 ];
 
 export default QUIZ_DATA;
