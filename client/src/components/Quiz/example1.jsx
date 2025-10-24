@@ -64,5 +64,4 @@ const QUIZ_DATA = [
 
 ];
 
-// Xuất mảng dữ liệu ra ngoài để component khác có thể sử dụng
 export default QUIZ_DATA;
