@@ -1,0 +1,305 @@
+.Result {
+    text-align: center;
+    color: #2b455d; 
+    font-size: 3.5em;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 4px solid #2f6fa8; 
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* TÓM TẮT KẾT QUẢ  */
+
+.ketquaht {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    color: black;
+    max-width: fit-content;
+    background-color: #f7f7f7; 
+    padding: 15px 25px;
+    margin: 20px auto 30px auto; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.ketquaht p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+}
+.ketquaht p .icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: #1e88e5; 
+}
+
+.score-value {
+    font-weight: 700;
+    color: #4caf50;
+}
+
+/* NÚT HÀNH ĐỘNG  */
+
+.result-actions, .detail-table, .ranking-actions {
+    text-align: center;
+    margin-top: 31px;
+    margin-bottom: 15px;
+}
+.ranking-actions85 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.btn-detail {
+    margin: 2px px;
+    padding: 12px 30px;
+    background-color: #373f45; /* Màu xanh dương tiêu chuẩn */
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-detail:hover {
+    background-color: #1565c0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(30, 136, 229, 0.3);
+}
+
+.result-actions .btn-detail {
+    background-color: #4e4840;
+}
+.result-actions .btn-detail:hover {
+    background-color: #fb8c00;
+    box-shadow: 0 6px 15px rgba(255, 152, 0, 0.3);
+}
+
+
+/* BẢNG CHI TIẾT ĐÁP ÁN  */
+
+.table-title {
+    text-align: center;
+    color: #555;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.table1 {
+    overflow-x: auto; 
+}
+
+.table2 {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.table2 th {
+    background-color: #424242;
+    color: white;
+    font-weight: 600;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.table2 td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: white; 
+    word-break: break-word;
+}
+    .table2 thead tr th:nth-child(1),
+.table2 tbody tr td:nth-child(1) {
+    width: 5%; 
+}
+
+.table2 thead tr th:nth-child(5),
+.table2 tbody tr td:nth-child(5) {
+    width: 15%; 
+}
+
+.table2 thead tr th:nth-child(2) {
+    width: 25%; 
+}
+.table2 thead tr th:nth-child(3),
+.table2 thead tr th:nth-child(4) {
+    width: 27.5%; 
+}
+
+.table2 tbody tr:nth-child(even) td {
+    background-color: #f9f9f9; 
+}
+
+/* PHÂN BIỆT KẾT QUẢ TRONG BẢNG CHI TIẾT */
+.row-correct td {
+    background-color: #e8f5e9 !important; 
+}
+.row-wrong td {
+    background-color: #ffebee !important; 
+}
+
+.status-correct {
+    font-weight: 700;
+    color: #4caf50; 
+}
+
+.status-wrong {
+    font-weight: 700;
+    color: #f44336; 
+}
+
+/* BẢNG XẾP HẠNG  */
+
+.result-table-container {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.history-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.history-table th {
+    background-color: #424242; 
+    color: white;
+    font-weight: 600;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.history-table td {
+    border: 1px solid #e0e0e0;
+    padding: 10px 15px;
+    text-align: center;
+    background-color: white; 
+}
+
+.history-table tbody tr:nth-child(even) td {
+    background-color: #f9f9f9; 
+}
+
+/* HIỂN THỊ HẠNG (RANK) */
+.rank-cell {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.history-table tbody tr:nth-child(n+4) td:first-child { 
+    background-color: white;
+}
+.history-table tbody tr:nth-child(even):nth-child(n+4) td:first-child { 
+    background-color: #f9f9f9;
+}
+/* DROP-DOWN HEADER STYLES */
+
+.user-Infor-wrapper {
+    position: relative;
+}
+
+.userId-icon {
+    cursor: pointer;
+    padding: 5px; 
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    color: white; 
+}
+.userId-icon:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Hiệu ứng hover nhẹ */
+}
+
+
+.user-dropdown-popup {
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    margin-top: 10px; 
+    background-color: white;
+    color: #333;
+    min-width: 220px; 
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); 
+    z-index: 100;
+    overflow: hidden; 
+    border: 1px solid #ddd;
+    text-align: left;
+    transform-origin: top right;
+    animation: fadeIn 0.3s ease-out; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.dropdown-username {
+    padding: 12px 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    color: #3f9bea; 
+    cursor: default;
+    white-space: nowrap;
+    font-size: 1.2rem;
+}
+
+.dropdown-menu-item {
+    display: flex; 
+    align-items: center; 
+    padding: 12px 15px;
+    text-decoration: none; 
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu-item:hover {
+    background-color: #e3f2fd; 
+    color: #1e88e5; 
+}
+
+
+.dropdown-logout {
+    display: flex; 
+    align-items: center; 
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+    color: #333;
+    border-top: 1px solid #eee;
+}
+
+.dropdown-logout:hover {
+    background-color: #fce4e4; 
+    color: #d32f2f; 
+}
+
+.dropdown-menu-item svg,
+.dropdown-logout svg {
+    flex-shrink: 0; 
+}
