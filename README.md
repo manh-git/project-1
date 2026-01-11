@@ -27,16 +27,16 @@ git clone [https://github.com/manh-git/project-1.git](https://github.com/manh-gi
 cd project-1
 ```
 ### 2. Cài đặt cho Client
-'''base
+```base
 cd client
 npm install
 npm run dev
-'''
+```
 ### 3. Cài đạt cho server
-'''base
+```base
 cd server
 npm start
-'''
+```
 ### 4. Thiết lập Database
 Để chạy được dự án bạn cần tạo database mới tên là 'ReviewVocab'. Chạy file server/database.sql để tạo bảng.
 Rồi cấu hình kết nối thông số. Tải dữ liệu trong folder server/data lên database.
