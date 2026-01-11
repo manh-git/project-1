@@ -73,7 +73,7 @@ const ResetPass = ()=>{
                     icon={<FontAwesomeIcon icon={faLock} />}
                 />
                 <button 
-                    className="btn-primary1"
+                    className="btn-primary"
                     disabled={ inputs.passwordConfirm === "" ||inputs.password === "" }
                 >
                 {status === "loading" ? "Loading . . . " : status === "success" ? "Success!" : "Change Password"}
