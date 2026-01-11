@@ -5,13 +5,87 @@
     margin-bottom: 25px;
     font-weight: 700;
     letter-spacing: 1px;
-    border-bottom: 4px solid #2f6fa8; 
+    border-bottom: 4px solid #287414; 
     display: inline-block;
     padding-bottom: 5px;
+    z-index: 2;
+    position: relative;
 }
 
 /* TÓM TẮT KẾT QUẢ  */
+.result-container {
+    background-color: #f0f7f4; 
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
 
+.floating-icon {
+    position: absolute;
+    color: #8da399; 
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none;
+}
+.shape2 {
+    position: absolute;
+    z-index: 0; 
+    opacity: 0.8; 
+}
+
+.shape2-2 {
+    width: 270px;
+    height: 270px;
+    border-radius: 0;
+    transform: rotate(-45deg);
+    top: 32vh;
+    left:42vw;
+    z-index: 0;
+    position: absolute;
+    filter: blur(40px);
+    opacity: 0.1;
+    background:linear-gradient(135deg, #dce35b 0%, #45b649 100%);
+}
+.shape2-2::before,
+.shape2-2::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    background-color: inherit;
+}
+
+
+.shape2-2::before {
+    top: -50%;
+    left: 0;
+}
+
+.shape2-2::after {
+    left: 50%;
+    top: 0;
+}
+.icon-cloud-left { top: 150px; left: 22%;animation: float 4s ease-in-out infinite; font-size: 4vw; }
+.icon-cloud-right { top: 150px; right: 23%;animation: float 4.75s ease-in-out infinite; font-size: 5vw; }
+.icon-cloud-bottom { top: 350px; right: 12%;animation: float 4.15s ease-in-out infinite; font-size: 3.75vw; }
+.icon-plane-left { top: 300px; left: 12%;animation: float 4.25s ease-in-out infinite; font-size: 4.5vw; transform: rotate(50deg); }
+.icon-star-top { top: 400px; left: 28%;animation: float 3.75s ease-in-out infinite; font-size: 3.4vw; }
+.icon-star-right { top: 460px; right: 30%;animation: float 4.5s ease-in-out infinite; font-size: 2vw; }
+.icon-book-decor { top: 300px; right: 27%;animation: float 5s ease-in-out infinite; font-size: 3.25vw; opacity: 0.3; }
+
+.ketquaht {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(5px); 
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05) !important;
+    position: relative;
+    z-index: 10;
+    
+}
 .ketquaht {
     border: 2px solid #e0e0e0;
     border-radius: 8px;
@@ -20,21 +94,21 @@
     background-color: #f7f7f7; 
     padding: 15px 25px;
     margin: 20px auto 30px auto; 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     text-align: left;
 }
 
 .ketquaht p {
     margin: 5px 0;
-    font-size: 1.1em;
+    font-size: 1.3em;
     display: flex;
     align-items: center;
     line-height: 1.5;
 }
 .ketquaht p .icon {
     margin-right: 10px;
-    font-size: 1.2em;
-    color: #1e88e5; 
+    font-size: 1.8em;
+    color: #082e50; 
 }
 
 .score-value {
@@ -54,32 +128,35 @@
     margin-top: 5px;
     margin-bottom: 15px;
 }
-.btn-detail {
+.btn-detail { 
     margin: 2px px;
     padding: 12px 30px;
-    background-color: #373f45; /* Màu xanh dương tiêu chuẩn */
+    background: linear-gradient(135deg, #2D5A27 0%, #1e3a1a 100%);
     color: white;
-    border: none;
-    border-radius: 8px; 
+    border-color: none;
+    border-radius: 50px; 
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 0;
 }
 
 .btn-detail:hover {
     background-color: #1565c0;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(30, 136, 229, 0.3);
+    box-shadow: 0 6px 15px rgba(16, 45, 71, 0.3);
 }
 
 .result-actions .btn-detail {
-    background-color: #4e4840;
+    background-color: #5D4037;
 }
 .result-actions .btn-detail:hover {
     background-color: #fb8c00;
-    box-shadow: 0 6px 15px rgba(255, 152, 0, 0.3);
+    box-shadow: 0 6px 15px rgba(85, 55, 11, 0.3);
 }
 
 
@@ -108,7 +185,7 @@
 }
 
 .table2 th {
-    background-color: #424242;
+    background-color: #2D5A27;
     color: white;
     font-weight: 600;
     padding: 12px 15px;
@@ -146,10 +223,10 @@
 
 /* PHÂN BIỆT KẾT QUẢ TRONG BẢNG CHI TIẾT */
 .row-correct td {
-    background-color: #e8f5e9 !important; 
+    background-color: #f1f8e9 !important; 
 }
 .row-wrong td {
-    background-color: #ffebee !important; 
+    background-color: #fff1f0 !important; 
 }
 
 .status-correct {
@@ -179,7 +256,7 @@
 }
 
 .history-table th {
-    background-color: #424242; 
+    background-color: #2D5A27; 
     color: white;
     font-weight: 600;
     padding: 12px 15px;

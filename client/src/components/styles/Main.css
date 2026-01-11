@@ -1,12 +1,88 @@
-
-.container{
+.container {
     min-height: 100vh;
-    background-color: #eff9ee;
-    padding: 0 5%;
+    background-color: #eff9ee; /* Màu xanh nền bên phải */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; 
+    height: 100%;
+    background-color: #FFFFF0; 
+    z-index: -1;
     
+    clip-path: path('M0,0 L450,0 C550,200 300,400 500,600 C650,800 400,1000 450,1200 L0,1200 Z');
+}
+
+.shape {
+    position: absolute;
+    z-index: -1; 
+    opacity: 0.8; 
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    background-color: #d7ede7; 
+    border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%;
+    top: -150px;
+    left: -100px;
+    animation: rotateShape 20s linear infinite;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background-color: #3cc8ac;
+    border-radius: 50%;
+    bottom: -100px;
+    right: -50px;
+    opacity: 0.2; 
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    background-color: #fce7b2; 
+    border-radius: 30% 70% 70% 30%;
+    top: 20%;
+    left: 45%;
+    transform: rotate(15deg);
+    z-index: 1;
+}
+.shape-4 {
+    width: 55px;
+    height: 50px;
+    background-color: #ced1e0; 
+    border-radius: 30% 45% 35% 55%;
+    top: 75%;
+    left: 15%;
+    transform: rotate(15deg);
+}
+.shape-5 {
+    width: 250px;
+    height: 250px;
+    background-color: #ced1e0; 
+    border-radius: 30% 45% 35% 55%;
+    top: 30%;
+    right: 5%;
+    transform: rotate(15deg);
+    z-index: 1;
+}
+
+@keyframes rotateShape {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 .main-content-wrapper {
-    display: flex; 
+    display: flex;
     align-items: center;
     min-height: calc(100vh - 80px); 
     padding: 0 5%;
@@ -15,16 +91,16 @@
     color: #34495E; 
     text-decoration: none;
     font-weight: 600;
-    padding: 8px 10px;
+    padding: 8px 20px;
     border: 2px solid ;
     border-radius: 10px;
     transition: 0.3s;
     background-color: #ffffff;
+    display: inline-block;
     
 }
 .auth-links .header-link:hover {
-    background-color: #50560b;
-    color: white;
+    transform: scale(0.95);
 }
 .header-link{margin-right: 5px;}
 .container form{
@@ -36,8 +112,8 @@
     margin-top: 20px;
 }
 .main-container{
-    flex:1;
-    max-width: 50%;
+    flex:0.8;
+    max-width: 40%;
     padding-left: 0px;
     margin-top: 0px;
     padding-right: 50px;
@@ -45,12 +121,12 @@
 }
 .title {
     font-size: 5em;
-    color:#34495E;
+    color:#2D5A27;
     margin-top: 0px;
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 0.85;
     margin-bottom: 0px;
-    
+    letter-spacing: -3px;
 }
 .highlight-title{
     font-size: 4.5rem;
@@ -58,6 +134,7 @@
     font-weight: 800;
     color: #1ABC9C;
     margin-top: 5px;
+    margin: -10px 0 20px 0;
 }
 .subtitle-text { 
     
@@ -80,15 +157,15 @@
     color: #16052c;
 }
 .start-learning {
-    background-color: #644a33; 
+    background-color: #384b5d;
     color: white; 
-    border: 2px solid #716c62;
+    border: none;
+    box-shadow: 0 4px 14px rgba(52, 73, 94, 0.2);
 }
 .start-learning:hover{
-    background-color: #ff7903;
-    color: #13471a;
+    background-color: #023027; 
+    color: white;
     transform: translateY(-3px);
-    border-color: #ff7903;
 }
 .start-learning svg{
     animation: jiggle 0.5s ease-in-out infinite; 
@@ -110,15 +187,15 @@
     display:  flex;
     justify-content: flex-end;
     align-items: center;
-    max-width: 50%;
-    margin-bottom: 0px;
+    max-width: 100%;
+    margin-bottom: -200px;
     margin-left: 0;
 }
 .image-main img {
   
-  max-width: 100%;
-  max-height: 80vh;
-  height: 100%;
+  max-width: 129%;
+  max-height: 140vh;
+  height: 150%;
   object-fit: contain;
   border-radius: 16px;
   transition: transform 0.3s ease;
@@ -129,13 +206,13 @@
 }
 .Menu-C{
     border: 1px solid whitesmoke;
-    border-radius: 10px;
+    border-radius: 35px;
     background-color: antiquewhite;
     color: brown;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2.2rem;
     font-weight: bold;
-    padding:2px;
+    padding:5px;
     width: 200px;
     margin-top: 3px;
     margin-left: 60px;
@@ -144,13 +221,13 @@
 }
 .Menu-C1{
     border: 1px solid whitesmoke;
-    border-radius: 10px;
+    border-radius: 35px;
     background-color: rgb(228, 229, 190);
     color: brown;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2.2rem;
     font-weight: bold;
-    padding:2px;
+    padding:5px;
     width: 200px;
     margin-top: 8px;
     margin-left: 60px;
@@ -204,42 +281,43 @@
 
 .title {
     opacity: 0; 
-    animation: slideDownFade 0.6s ease-out 0.1s forwards; /* 0.1s delay */
+    animation: slideDownFade 0.6s ease-out 0.1s forwards; 
 }
 
 .highlight-title {
     opacity: 0;
-    animation: slideUpFade 0.7s ease-out 0.3s forwards; /* 0.3s delay */
+    animation: slideUpFade 0.7s ease-out 0.3s forwards;
 }
 
 .subtitle-text {
     opacity: 0;
     animation: fadeIn 1s ease-out 0.8s forwards; 
 }
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-.image-main {
-    opacity: 0;
-    animation: scaleInFade 1s ease-out 1s forwards;
-    animation-name: scaleInFade, subtleFloat;
-    animation-duration: 1s, 4s;
-    animation-delay: 1s, 2s;
-    animation-timing-function: ease-out, ease-in-out;
-    animation-fill-mode: forwards, forwards;
-    animation-iteration-count: 1, infinite;
-    animation-direction: normal, alternate;
+
+
+
+.floating-icons-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes scaleInFade {
-    0% { opacity: 0; transform: scale(0.95); }
-    100% { opacity: 1; transform: scale(1); }
+.f-icon {
+    position: absolute;
+    color: #0e5042;
+    opacity: 0.6;
+    z-index: 2;
+    animation: floatIcon 3s infinite ease-in-out alternate;
 }
 
-@keyframes subtleFloat {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}
+.star-1 { top: 10%; left: 10%; font-size: 2.5rem; animation-delay: 0s; }
+.book-1 { top: 20%; right: 15%; font-size: 4rem; transform: rotate(20deg); animation-delay: 0.5s; }
+.star-2 { bottom: 25%; left: 15%; font-size: 3rem; animation-delay: 1s; }
+.star-3 { bottom: 43%; right: 12%; font-size: 1.5rem; transform: rotate(-15deg); animation-delay: 1.5s; }
+.star-4 { bottom: 60%; right: 64%; font-size: 2rem; transform: rotate(-30deg); animation-delay: 1.5s; }
 
+@keyframes floatIcon {
+    from { transform: translateY(0) rotate(0); }
+    to { transform: translateY(-20px) rotate(10deg); }
+}

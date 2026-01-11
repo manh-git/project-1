@@ -1,12 +1,11 @@
 import {useDispatch, useSelector} from 'react-redux'
 import { useState,useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'
-import image_main from '../assets/main.svg'
+import image_main from '../assets/download.png'
 import { fetchUserSession} from './redux/auth_reducer';
 import AppHeader from './Header'; 
 import { FaFire ,FaBrain, FaLightbulb } from 'react-icons/fa';
-
+import { FaStar, FaBook } from 'react-icons/fa';
 function Main(){
     const [showGlow, setShowGlow] = useState(false);
     
@@ -38,6 +37,8 @@ function Main(){
 
     return(
     <div className='container'>
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
         <AppHeader /> 
 
     <div className='main-content-wrapper'>
@@ -89,7 +90,14 @@ function Main(){
         </div>
 
         <div className='image-main'>
-            <img src={image_main}/>
+            <div className="floating-icons-wrapper">
+        <FaStar className="f-icon star-1" />
+        <FaBook className="f-icon book-1" />
+        <FaStar className="f-icon star-2" />
+        <FaStar className="f-icon star-3" />
+        <FaStar className="f-icon star-4" />
+        <img src={image_main} alt="Main illustration" />
+    </div>
         </div>
     </div> 
     </div>)

@@ -30,14 +30,9 @@ export default function QuizNavigator({ totalQuestions, currentIndex, userAnswer
         );
     });
     return (
-        <div className="question-navigator">
-            <h3>Progress</h3>
-            <div className="navigator-grid">
+        <div className="modern-navigator">
                 <div className="cell"> {cells} </div>
-                <button className="next-final" onClick={onFinal}>                    
-                    Final Quiz!
-                </button>
-            </div>
+                
         </div>
     );
 }

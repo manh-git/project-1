@@ -5,6 +5,7 @@ import { useState,useEffect } from "react";
 import { fetchUserSession } from '../redux/auth_reducer';
 import image_main from '/src/assets/main1.svg'
 import AppHeader from "../Header";
+import { FaStar, FaBook,FaCloud } from 'react-icons/fa';
 const MODES = {
     all: 'All',
     new: 'New',
@@ -116,10 +117,20 @@ export default function Learn(){
     
     return(
         <div>
+            <div class="shape shape-5"></div>
+            <div class="shape1 shape1-1"></div>
             <AppHeader/>
-            <div className='topic-selection-page-wrapper'>
+            <FaStar className="floating-icon icon-1 star" />
+            <FaBook className="floating-icon icon-2 star" />
+            <FaStar className="floating-icon icon-3 circle-deco" />
+            <FaStar className="floating-icon icon-4 star" />
+            <FaStar className="floating-icon icon-5 star" />
+            <FaCloud className="floating-icon icon-8 star" />
+            <div className='topic-selection-page-container'>
+            <div className="selection-card">
             <h1>Select Your Flashcard Topic</h1>
-            <div className="select-topic">
+            <div class="form-group">
+            <div className="select-topic-page">
                 <label
                   htmlFor="topic-select"
                   className="Topic-ID"
@@ -141,12 +152,13 @@ export default function Learn(){
                   <option value="106"> Accounting</option>
                   <option value="107"> Commerce</option>
                 </select>
-                
+                </div>
                 {isLoadingCounts && <div className="loading-message">Loading vocabulary counts...</div>}
                 {fetchError && <div className="error-message" style={{color: 'red', marginTop: '10px'}}>{fetchError}</div>}
                 
                 {isReadyToDisplayControls && (
                     <>
+                        <div class="form-group">
                         <label className="Topic-ID">
                             2. Select Mode (Available: {currentModeCount})
                         </label>
@@ -166,7 +178,8 @@ export default function Learn(){
                             </option>
                             ))}
                         </select> 
-                        
+                        </div>
+                        <div class="form-group">
                         <label className="Topic-ID">
                             3. Select Card Limit (Max: {currentModeCount})
                         </label>
@@ -185,6 +198,8 @@ export default function Learn(){
                                 <option value="0">No Cards Available</option>
                             )}
                         </select>
+                        </div>
+                        <br/>
                         <br/>
                         
                         <button 
@@ -197,6 +212,7 @@ export default function Learn(){
                     </>
                 )}
 
+            </div>
             </div>
             
             <div className='image-main1'>

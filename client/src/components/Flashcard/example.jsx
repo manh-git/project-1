@@ -6,7 +6,8 @@ import good from '/src/assets/good.png'
 const useQuery = () => {
     return new URLSearchParams(useLocation().search);
 };
-
+import AppHeader from '../Header';
+import Decorations from './icon';
 export const StatsIcons = ({ stats, wiggleTrigger }) => {
     return (
         <div className="learn-process">
@@ -202,6 +203,9 @@ export default function FlashCardData(){
         else frontContent= wordContent +'<br/>/' + vocab.Pronunciation+'/';
         
         return (
+            
+            
+            
             <FlashCard
                 key={vocab.VocabId}
                 topicName = {topicName}
@@ -218,6 +222,7 @@ export default function FlashCardData(){
                 wiggleTrigger={wiggleTrigger}
                 animationClass={animClass}
             />
+            
         );
     };
 
@@ -225,6 +230,9 @@ export default function FlashCardData(){
     const outVocab = currentOutIndex !== null ? vocabs[currentOutIndex] : null;
 
     return(
+        <div className='flascard-page'>
+            <Decorations/>
+            <AppHeader/>
         <div className="flashcard-wrapper">
             
             <div className="flashcard-container">
@@ -248,6 +256,7 @@ export default function FlashCardData(){
                     ) : (<img src={good}  className="feedback-image" />
             )}
             </div>)}
+        </div>
         </div>
     )
 }

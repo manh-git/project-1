@@ -8,7 +8,8 @@ import QuizNavigator from "./QuizNavigator";
 import '../styles/quiz.css';
 import quizMusic from '/src/assets/quiz.mp3'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeadphonesSimple,faSlash  } from "@fortawesome/free-solid-svg-icons";
+import { faMusic,faSlash,faClock  } from "@fortawesome/free-solid-svg-icons";
+import { FaStar, FaBook,FaCloud,FaLightbulb,FaMap } from 'react-icons/fa';
 import AppHeader from "../Header";
 
 const Min_Vocab= 4
@@ -19,14 +20,13 @@ const isFillCorrect = (userAnswer, correctAnswer)=>{
     return userAnswer.trim().toLowerCase() === correctAnswer.trim().toLowerCase();
 }
 export const formatTime = (totalSeconds) => {
-    const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
     
 
     const pad = (num) => num.toString().padStart(2, '0');
 
-    return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    return `${pad(minutes)}:${pad(seconds)}`;
 };
 
 
@@ -578,53 +578,73 @@ export default function Quiz(){
     }
 
     return (
-        <div className="container-1">
-            <audio ref = {audioRef} src={quizMusic} loop className="hiden"></audio>
-            
-            <AppHeader/>
-            <h1 className="head-quiz1">Topic: {topicName}</h1>
-
-            <div className="quiz-time-process">
-            <div className={`time-display ${isTimeRunningLow ? 'time-low-alert' : ''}`}> 
-                <span>Time: {formatTime(seconds)}</span>
+        
+    <div className="container-1">
+        <audio ref={audioRef} src={quizMusic} loop className="hidden"></audio>
+        <AppHeader />
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+        <FaStar className="floating-icon icon-1 star" />
+                    <FaBook className="floating-icon icon-2 star" />
+                    <FaStar className="floating-icon icon-4 star" />
+                    <FaCloud className="floating-icon icon-7 star" />
+                    <FaMap className="floating-icon icon-12 star" />
+<br/>
+<br/>
+        <div className="quiz-top-bar">
+            <QuizNavigator
+                totalQuestions={totalQuestions}
+                currentIndex={currentIndex}
+                userAnswers={answer}
+                onFinal={onFinal}
+            />
+            <div className={`time-display-modern ${isTimeRunningLow ? 'time-low-alert' : ''}`}>
+                <FontAwesomeIcon icon={faClock} /> <span>{formatTime(seconds)}</span>
             </div>
-            <button onClick = {toggleMusic} className="music-control" title={isPlaying ? "Playing" : " Paused"}>
-                <div className="icon-overlay-container"> 
-                    <FontAwesomeIcon 
-                        icon={faHeadphonesSimple} 
+        </div>
+
+        <div className="quiz-main-card">
+            <div className="music-head">
+            <h1 className="head-quiz-modern">Topic: {topicName}</h1>
+                <button onClick = {toggleMusic} className="music-control" title={isPlaying ? "Playing" : " Paused"}>
+                <div className="icon-overlay-container">
+                    <FontAwesomeIcon
+                        icon={faMusic}
                         className="headphones-icon"
                     />
                     {!isPlaying && (
                         <FontAwesomeIcon
+
                            icon = {faSlash}
+
                            className="overlay-slash-icon"
                         />
                     )}
                 </div>
             </button>
-            <QuizNavigator
-                    totalQuestions={totalQuestions}
-                    currentIndex={currentIndex}
-                    userAnswers={answer}
-                    onFinal={onFinal}/>
             </div>
-           
+            
             <div className="Q-content">
                 <p className="q-text">{currentQuestion.questionText}</p>
                 {renderQuestion()}
             </div>
-            
-
-            <div className="next-prev">
-                {currentIndex>0 &&(
-                <button className="prev" onClick={onPrev}>Prev </button> )}
-
-                <button className="next" onClick={onNext}>
-                    {currentIndex === (totalQuestions-1)? 'Final Quiz!' : 'Next'}
+            <div className="quiz-controls-footer">
+                <button className="nav-btn prev" onClick={onPrev} disabled={currentIndex === 0}>
+                    Prev
                 </button>
-            
+                <button className="nav-btn final" onClick={onFinal}>
+                    Final Quiz!
+                </button>
+                <button className="nav-btn next" onClick={onNext}>
+                    {currentIndex === totalQuestions - 1 ? 'Finish' : 'Next'}
+                </button>
             </div>
-
         </div>
-    )
+
+        
+    </div>
+);
+    
 }

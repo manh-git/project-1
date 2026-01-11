@@ -5,6 +5,7 @@ import { useState,useEffect } from "react";
 import { fetchUserSession } from '../redux/auth_reducer';
 import image_main from '/src/assets/main2.svg'
 import AppHeader from "../Header";
+import { FaStar, FaBook } from 'react-icons/fa';
 export default function Learn(){
     const navigate = useNavigate();
     const dispatch= useDispatch();
@@ -50,8 +51,16 @@ export default function Learn(){
     }
     return(
         <div>
+          <div class="shape shape-3"></div>
+          <div class="shape1 shape1-1"></div>
+          <FaStar className="floating-icon icon-1 star" />
+            <FaBook className="floating-icon icon-2 star" />
+            <FaStar className="floating-icon icon-3 circle-deco" />
+            <FaStar className="floating-icon icon-4 star" />
+            <FaStar className="floating-icon icon-5" />
             <AppHeader/>
-            <div className='topic-selection-page-wrapper'>
+            <div className='topic-selection-page-container'>
+              <div className="selection-card">
             <h1>Practice Topics</h1>
             
         <div className="select-topic">
@@ -110,6 +119,7 @@ export default function Learn(){
       >
         Start Quiz
       </button>
+      </div>
 <div className='image-main2'>
        
                    <img src={image_main}/>

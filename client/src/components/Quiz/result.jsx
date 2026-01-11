@@ -6,7 +6,7 @@ import ResultTable from "./ResultTable";
 import React, { useState, useEffect } from "react";
 import '../styles/result.css';
 import AppHeader from "../Header";
-import { FaTrophy, FaCheck, FaClock, FaClipboardList } from 'react-icons/fa'; 
+import { FaTrophy, FaCheck, FaClock, FaClipboardList, FaPaperPlane, FaCloud, FaAddressBook, FaStar } from 'react-icons/fa'; 
 
 
 const getStatus = (status) => {
@@ -62,9 +62,18 @@ export default function Result() {
 
     return (
         <div className="result-container">
+            
+            <FaCloud className="floating-icon icon-cloud-left" />
+            <FaCloud className="floating-icon icon-cloud-right" />
+            <FaCloud className="floating-icon icon-cloud-bottom" />
+            <FaPaperPlane className="floating-icon icon-plane-left" />
+            <FaStar className="floating-icon icon-star-top" />
+            <FaStar className="floating-icon icon-star-right" />
+            <FaAddressBook className="floating-icon icon-book-decor" />
             <AppHeader />
             
             <div className='topic-selection-page-wrapper'>
+                <div class="shape2 shape2-2"></div>
                 <h1 className="Result">Result</h1>
                 <div className="ketquaht">
                     <p><FaClipboardList className="icon" />Total Questions: {totalQuestions}</p>

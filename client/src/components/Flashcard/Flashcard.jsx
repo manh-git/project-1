@@ -7,6 +7,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import { fetchUserSession } from '../redux/auth_reducer';
 import { StatsIcons } from './example';
 import AppHeader from '../Header';
+import Decorations from './icon';
 const FlashCard=({
     topicName,
     frontText,
@@ -88,7 +89,6 @@ const FlashCard=({
     )
     return(
       <div className='flascard-page'>
-        <AppHeader/>
         <div className='topic-selection-page-wrapper'>
         <h1 className="head-quiz">Topic: {topicName}</h1>
         <StatsIcons stats={{unknown: learningCount, known: masteredCount}} wiggleTrigger={wiggleTrigger} />
